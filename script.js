@@ -1,34 +1,52 @@
-### Complete JavaScript (`script.js`)
+document.addEventListener('DOMContentLoaded', function() {
+    // Mobile Menu Toggle
+    const toggleButton = document.getElementById('toggleButton');
+    const navMenu = document.querySelector('header nav ul');
 
-```javascript
-// Toggle the header navigation for mobile devices
-function toggleHeader() {
-    const nav = document.querySelector('header nav ul');
-    nav.classList.toggle('show');
-}
+    toggleButton.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+    });
 
-// Slideshow functionality
-let slideIndex = 0;
-showSlides();
+    // Slideshow Functionality
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slides');
+    const totalSlides = slides.length;
 
-function showSlides() {
-    const slides = document.getElementsByClassName('slides');
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = 'none';
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.style.display = i === index ? 'block' : 'none';
+        });
     }
-    slideIndex++;
-    if (slideIndex > slides.length) {slideIndex = 1}
-    slides[slideIndex - 1].style.display = 'block';
-    setTimeout(showSlides, 3000); // Change image every 3 seconds
-}
 
-// Display the job application form
-function applyForJob() {
-    const form = document.getElementById('application-form');
-    form.style.display = 'block';
-}
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        showSlide(currentSlide);
+    }
 
-// Dummy function for the "Get a Free Quote" button
-function getQuote() {
-    alert('Thank you for your interest! Please contact us via phone or email for a free quote.');
-}
+    setInterval(nextSlide, 3000); // Change slide every 3 seconds
+
+    // Initial slide setup
+    showSlide(currentSlide);
+
+    // Get a Free Quote Button
+    const quoteButton = document.getElementById('quoteButton');
+    quoteButton.addEventListener('click', function() {
+        alert('Please contact us at +1 (480) 343-7488 for a free quote.');
+    });
+
+    // Apply for Job Button
+    const applyButton = document.querySelector('#careers .job button');
+    const applicationForm = document.getElementById('application-form');
+
+    applyButton.addEventListener('click', function() {
+        applicationForm.style.display = 'block';
+    });
+
+    // Submit Job Application Form
+    applicationForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        alert('Your application has been submitted. Thank you!');
+        applicationForm.style.display = 'none';
+        applicationForm.reset();
+    });
+});
