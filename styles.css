@@ -1,9 +1,13 @@
+/* Global Styles */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     color: #333;
 }
+
+/* Header Styles */
 
 header {
     background-color: #f4a261;
@@ -48,6 +52,8 @@ nav ul li a {
     cursor: pointer;
     z-index: 10;
 }
+
+/* Banner Styles */
 
 .banner {
     position: relative;
@@ -99,6 +105,8 @@ nav ul li a {
     z-index: 1;
 }
 
+/* Main Content Styles */
+
 #about,
 #services,
 #testimonials,
@@ -122,6 +130,8 @@ nav ul li a {
     padding: 20px;
     border: 1px solid #ddd;
 }
+
+/* Footer Styles */
 
 .footer-content {
     background-color: #264653;
@@ -150,6 +160,8 @@ nav ul li a {
     margin: 0 10px;
     text-decoration: none;
 }
+
+/* Media Queries */
 
 @media screen and (max-width: 768px) {
     header {
