@@ -1,65 +1,69 @@
-/* Global Styles */
-body {
-    font-family: Arial, sans-serif;
+/* Basic Reset */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Font Settings */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
     color: #333;
+    margin: 0;
 }
 
-.container {
-    width: 90%;
-    margin: 0 auto;
-}
-
-/* Header Styles */
+/* Header */
 header {
-    background-color: #f4a261;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
+    background: #f8b400;
+    color: #fff;
     padding: 10px 0;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
 }
 
 header .logo {
     font-size: 24px;
     font-weight: bold;
-    color: #fff;
-    margin-left: 20px;
+    text-align: center;
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+header nav {
+    text-align: center;
 }
 
-.nav-links {
+header nav ul {
     list-style: none;
-    margin: 0;
-    padding: 0;
     display: flex;
 }
 
-.nav-links li {
-    margin: 0 10px;
+header nav ul li {
+    margin: 0 15px;
 }
 
-.nav-links a {
+header nav ul li a {
     color: #fff;
     text-decoration: none;
 }
 
-.menu-toggle {
+#toggleButton {
     display: none;
-    font-size: 24px;
+    background-color: transparent;
+    border: none;
     color: #fff;
-    margin-right: 20px;
+    font-size: 20px;
     cursor: pointer;
+    z-index: 10;
 }
 
-/* Banner Styles */
+#toggleButton:hover {
+    color: #fff;
+}
+
+/* Banner Section */
 .banner {
     position: relative;
     color: #fff;
@@ -70,7 +74,6 @@ nav {
     align-items: center;
     justify-content: center;
     min-height: 400px;
-    margin-top: 70px; /* Adjust for fixed header */
 }
 
 .slideshow {
@@ -87,125 +90,172 @@ nav {
     height: 100%;
     object-fit: cover;
     display: none;
-    opacity: 0.6; /* Opacity for all images */
-    transition: opacity 1s ease-in-out; /* Smooth fade transition */
+    opacity: 0.8;
 }
 
 .slides.active {
     display: block;
-    opacity: 1; /* Ensure the active slide is fully opaque */
 }
 
 .banner h1 {
     font-size: 36px;
-    margin: 20px 0;
+    margin: 0;
+    width: 90%;
+    z-index: 1;
 }
 
-#quoteButton {
-    padding: 10px 20px;
-    background-color: #e76f51;
+.banner button {
+    background-color: #2a9d8f;
     border: none;
     color: #fff;
+    padding: 10px 20px;
+    font-size: 18px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    z-index: 1;
 }
 
-#quoteButton:hover {
-    background-color: #d65a3a;
-}
-
-/* Section Styles */
+/* Main Content Sections */
 section {
-    padding: 60px 20px;
-    text-align: center;
+    padding: 40px 20px;
 }
 
-section h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
+/* About Section */
+#about .team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+#about .team img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Services Section */
 .service-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .service {
-    width: 30%;
+    flex: 1 1 calc(33.333% - 20px);
     margin: 10px;
     padding: 20px;
-    background-color: #f4f4f4;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.service:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+/* Testimonials Section */
+.testimonials {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-.service h3 {
-    margin-top: 0;
+.testimonial {
+    flex: 1 1 calc(50% - 20px);
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.service p {
-    margin-bottom: 0;
+/* Careers Section */
+.job-listings {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-/* Footer Styles */
+.job {
+    flex: 1 1 calc(50% - 20px);
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#application-form {
+    display: none;
+    margin-top: 20px;
+}
+
+#application-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#application-form input,
+#application-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+}
+
+/* Contact Section */
+#contact form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#contact form input,
+#contact form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+}
+
+/* Footer */
 footer {
-    background-color: #264653;
+    background: #264653;
     color: #fff;
     padding: 20px 0;
     text-align: center;
 }
 
-.footer-links {
+footer ul {
     list-style: none;
-    margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
 }
 
-.footer-links li {
+footer ul li {
+    display: inline;
     margin: 0 10px;
 }
 
-.footer-links a {
+footer ul li a {
     color: #fff;
     text-decoration: none;
 }
 
-.social-media {
-    margin-top: 10px;
-}
-
-.social-media a {
+.footer-content .social-media a {
     color: #fff;
     margin: 0 10px;
     text-decoration: none;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .nav-links {
-        flex-direction: column;
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    header nav ul {
         display: none;
-    }
-
-    .nav-links.show {
-        display: flex;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    .service {
+        flex-direction: column;
+        align-items: center;
+        background: #f8b400;
+        position: absolute;
         width: 100%;
+        top: 80px; /* Adjust as needed based on header height */
+        left: 0;
+    }
+
+    header nav ul li {
+        margin: 15px 0;
+    }
+
+    #toggleButton {
+        display: block; /* Make the toggle button visible */
     }
 }
