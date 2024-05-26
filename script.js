@@ -1,21 +1,20 @@
-let slideIndex = 0;
-showSlides();
+### JavaScript (script.js)
+Add JavaScript to toggle the header visibility:
 
-function showSlides() {
-    let slides = document.getElementsByClassName("slides");
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].classList.remove("active");
+```javascript
+function toggleHeader() {
+    const header = document.getElementById('header');
+    if (header.style.display === 'flex') {
+        header.style.display = 'none';
+    } else {
+        header.style.display = 'flex';
     }
-    slideIndex++;
-    if (slideIndex > slides.length) { slideIndex = 1; }
-    slides[slideIndex - 1].classList.add("active");
-    setTimeout(showSlides, 3000); // Change image every 3 seconds
 }
 
 function getQuote() {
-    alert("Get a free quote today!");
+    alert('Get a free quote!');
 }
 
 function applyForJob() {
-    document.getElementById("application-form").style.display = "block";
+    document.getElementById('application-form').style.display = 'block';
 }
