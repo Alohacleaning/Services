@@ -50,7 +50,7 @@ header nav ul li a {
 }
 
 #toggleButton {
-    display: block; /* Make the toggle button visible */
+    display: none;
     background-color: transparent;
     border: none;
     color: #fff;
@@ -235,4 +235,27 @@ footer ul li a {
 .footer-content .social-media a {
     color: #fff;
     margin: 0 10px;
-    text-decoration
+    text-decoration: none;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    header nav ul {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background: #f8b400;
+        position: absolute;
+        width: 100%;
+        top: 80px; /* Adjust as needed based on header height */
+        left: 0;
+    }
+
+    header nav ul li {
+        margin: 15px 0;
+    }
+
+    #toggleButton {
+        display: block; /* Make the toggle button visible */
+    }
+}
