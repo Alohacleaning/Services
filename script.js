@@ -1,40 +1,38 @@
 ### JavaScript (script.js)
 ```javascript
+// JavaScript for Menu Toggle
+function toggleMenu() {
+    const navLinks = document.getElementById('nav-links');
+    navLinks.classList.toggle('show');
+}
+
+// JavaScript for Slideshow
 let slideIndex = 0;
+const slides = document.querySelectorAll('.slides');
 
 function showSlides() {
-    let slides = document.getElementsByClassName("slides");
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
+    slides.forEach((slide, index) => {
+        slide.style.display = 'none';
+        slide.classList.remove('active');
+    });
     slideIndex++;
     if (slideIndex > slides.length) {
         slideIndex = 1;
     }
-    slides[slideIndex - 1].style.display = "block";
-    setTimeout(showSlides, 3000); // Change image every 3 seconds
+    slides[slideIndex - 1].style.display = 'block';
+    slides[slideIndex - 1].classList.add('active');
+    setTimeout(showSlides, 5000); // Change image every 5 seconds
 }
 
 showSlides();
 
-function toggleMenu() {
-    let nav = document.getElementById("nav");
-    let navLinks = nav.getElementsByClassName("nav-links")[0];
-    navLinks.classList.toggle("show");
-}
-
+// JavaScript for Get Quote Button
 function getQuote() {
-    alert("Please contact us at +1 (480) 343-7488 or email alohacleanigco.ky@gmail.com for a free quote.");
+    alert('Get a free quote today!');
 }
 
+// JavaScript for Job Application Button
 function applyForJob() {
-    document.getElementById("application-form").style.display = "block";
+    const form = document.getElementById('application-form');
+    form.style.display = 'block';
 }
-
-document.querySelectorAll('form').forEach(form => {
-    form.addEventListener('submit', event => {
-        event.preventDefault();
-        alert("Thank you for your message/application. We will get back to you shortly.");
-        form.reset();
-    });
-});
