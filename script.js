@@ -1,5 +1,6 @@
 ### JavaScript (script.js)
-Add JavaScript to toggle the header visibility:
+
+Ensure the JavaScript functions are correctly implemented:
 
 ```javascript
 function toggleHeader() {
@@ -18,3 +19,22 @@ function getQuote() {
 function applyForJob() {
     document.getElementById('application-form').style.display = 'block';
 }
+
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slides');
+
+function showSlides() {
+    slides.forEach((slide, index) => {
+        slide.classList.remove('active');
+        if (index === currentSlide) {
+            slide.classList.add('active');
+        }
+    });
+    currentSlide = (currentSlide + 1) % slides.length;
+}
+
+setInterval(showSlides, 3000);
+
+document.addEventListener('DOMContentLoaded', function() {
+    showSlides();
+});
