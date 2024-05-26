@@ -13,54 +13,51 @@ body {
     margin: 0;
 }
 
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
 /* Header */
 header {
     background: #f8b400;
     color: #fff;
     padding: 10px 0;
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
 }
 
-header .logo {
+.logo {
     font-size: 24px;
     font-weight: bold;
     text-align: center;
 }
 
-header nav {
+nav {
     text-align: center;
 }
 
-header nav ul {
+.nav-links {
     list-style: none;
     display: flex;
+    justify-content: center;
 }
 
-header nav ul li {
+.nav-links li {
     margin: 0 15px;
 }
 
-header nav ul li a {
+.nav-links li a {
     color: #fff;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-#toggleButton {
+.nav-links li a:hover {
+    color: #2a9d8f;
+}
+
+.menu-toggle {
     display: none;
-    background-color: transparent;
-    border: none;
-    color: #fff;
-    font-size: 20px;
     cursor: pointer;
-    z-index: 10;
-}
-
-#toggleButton:hover {
-    color: #fff;
 }
 
 /* Banner Section */
@@ -69,10 +66,6 @@ header nav ul li a {
     color: #fff;
     text-align: center;
     padding: 100px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     min-height: 400px;
 }
 
@@ -90,11 +83,13 @@ header nav ul li a {
     height: 100%;
     object-fit: cover;
     display: none;
-    opacity: 0.8;
+    opacity: 0;
+    transition: opacity 1s ease;
 }
 
 .slides.active {
     display: block;
+    opacity: 1;
 }
 
 .banner h1 {
@@ -113,100 +108,6 @@ header nav ul li a {
     cursor: pointer;
     margin-top: 20px;
     z-index: 1;
-}
-
-/* Main Content Sections */
-section {
-    padding: 40px 20px;
-}
-
-/* About Section */
-#about .team {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#about .team img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Services Section */
-.service-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.service {
-    flex: 1 1 calc(33.333% - 20px);
-    margin: 10px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-/* Testimonials Section */
-.testimonials {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.testimonial {
-    flex: 1 1 calc(50% - 20px);
-    margin: 10px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-/* Careers Section */
-.job-listings {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.job {
-    flex: 1 1 calc(50% - 20px);
-    margin: 10px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-#application-form {
-    display: none;
-    margin-top: 20px;
-}
-
-#application-form label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-#application-form input,
-#application-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-}
-
-/* Contact Section */
-#contact form label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-#contact form input,
-#contact form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
 }
 
 /* Footer */
@@ -240,22 +141,28 @@ footer ul li a {
 
 /* Media Queries */
 @media screen and (max-width: 768px) {
-    header nav ul {
+    .nav-links {
         display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #f8b400;
+        padding: 10px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
         flex-direction: column;
         align-items: center;
-        background: #f8b400;
+    }
+
+    .menu-toggle {
+        display: block;
         position: absolute;
-        width: 100%;
-        top: 80px; /* Adjust as needed based on header height */
-        left: 0;
-    }
-
-    header nav ul li {
-        margin: 15px 0;
-    }
-
-    #toggleButton {
-        display: block; /* Make the toggle button visible */
+        top: 20px;
+        right: 20px;
+        font-size: 24px;
+        color: #fff;
     }
 }
