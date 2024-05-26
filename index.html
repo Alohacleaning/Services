@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
+    <header id="header">
         <div class="logo">Aloha Cleaning Co.</div>
         <nav>
             <ul>
@@ -21,10 +21,13 @@
         </nav>
     </header>
 
+    <button id="toggleButton" onclick="toggleHeader()">☰ Menu</button>
+
     <section id="home" class="banner">
         <div class="slideshow">
-            <img class="slides" src="Website logo.png" alt="Cleaning Image 1">
-            
+            <img class="slides" src="cleaning-banner1.jpg" alt="Cleaning Image 1">
+            <img class="slides" src="cleaning-banner2.jpg" alt="Cleaning Image 2">
+            <img class="slides" src="cleaning-banner3.jpg" alt="Cleaning Image 3">
         </div>
         <h1>Experience the Aloha Clean – Meticulous, Friendly, Reliable</h1>
         <button onclick="getQuote()">Get a Free Quote Today!</button>
@@ -34,7 +37,7 @@
         <h2>About Aloha Cleaning Co.</h2>
         <p>Welcome to Aloha Cleaning Co. We pride ourselves on meticulous attention to detail and friendly service.</p>
         <div class="team">
-            <img src="IMG_0024.jpeg" alt="Our Team">
+            <img src="team.jpg" alt="Our Team">
             <p>Our dedicated team ensures every cleaning task is completed to perfection.</p>
         </div>
     </section>
@@ -86,7 +89,7 @@
         <p>We are always looking for dedicated and detail-oriented individuals to join our team. If you're passionate about cleaning and providing excellent customer service, we want to hear from you!</p>
         <div class="job-listings">
             <div class="job">
-                <h3>Cleaning crew associate</h3>
+                <h3>Cleaning Technician</h3>
                 <p>Responsibilities include performing various cleaning tasks, maintaining high standards of cleanliness, and ensuring customer satisfaction.</p>
                 <button onclick="applyForJob()">Apply Now</button>
             </div>
