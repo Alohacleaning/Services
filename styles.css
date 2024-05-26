@@ -35,6 +35,20 @@ nav ul li a {
     text-decoration: none;
 }
 
+#toggleButton {
+    display: none;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #f4a261;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 10;
+}
+
 .banner {
     position: relative;
     color: #fff;
@@ -78,131 +92,4 @@ nav ul li a {
     background-color: #2a9d8f;
     border: none;
     color: #fff;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 20px;
-    z-index: 1;
-}
-
-section {
-    padding: 40px 20px;
-}
-
-h2 {
-    font-size: 28px;
-    color: #2a9d8f;
-    margin-bottom: 20px;
-}
-
-.team img {
-    width: 100%;
-    max-width: 300px;
-}
-
-.service-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.service {
-    background-color: #e9c46a;
-    padding: 20px;
-    border-radius: 8px;
-    width: calc(33.333% - 20px);
-}
-
-.service h3 {
-    margin-top: 0;
-}
-
-.testimonials {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.testimonial {
-    background-color: #264653;
-    color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-form input, form textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-}
-
-form button {
-    background-color: #2a9d8f;
-    border: none;
-    color: #fff;
-    padding: 10px;
-    cursor: pointer;
-}
-
-footer {
-    background-color: #264653;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.footer-content ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-content ul li {
-    display: inline;
-    margin: 0 10px;
-}
-
-.footer-content a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.social-media a {
-    margin: 0 10px;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    .service-list {
-        flex-direction: column;
-    }
-
-    .service {
-        width: 100%;
-    }
-
-    .banner h1 {
-        font-size: 24px;
-        width: 90%;
-    }
-}
+    padding
