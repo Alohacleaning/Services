@@ -199,3 +199,14 @@ footer {
         width: 90%;
     }
 }
+.slides {
+    width: 100%;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.slides.active {
+    display: block;
+}
