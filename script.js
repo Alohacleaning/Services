@@ -1,52 +1,40 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Mobile Menu Toggle
-    const toggleButton = document.getElementById('toggleButton');
-    const navMenu = document.querySelector('header nav ul');
+### JavaScript (script.js)
+```javascript
+let slideIndex = 0;
 
-    toggleButton.addEventListener('click', function() {
-        navMenu.classList.toggle('active');
-    });
-
-    // Slideshow Functionality
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.slides');
-    const totalSlides = slides.length;
-
-    function showSlide(index) {
-        slides.forEach((slide, i) => {
-            slide.style.display = i === index ? 'block' : 'none';
-        });
+function showSlides() {
+    let slides = document.getElementsByClassName("slides");
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
     }
-
-    function nextSlide() {
-        currentSlide = (currentSlide + 1) % totalSlides;
-        showSlide(currentSlide);
+    slideIndex++;
+    if (slideIndex > slides.length) {
+        slideIndex = 1;
     }
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides, 3000); // Change image every 3 seconds
+}
 
-    setInterval(nextSlide, 3000); // Change slide every 3 seconds
+showSlides();
 
-    // Initial slide setup
-    showSlide(currentSlide);
+function toggleMenu() {
+    let nav = document.getElementById("nav");
+    let navLinks = nav.getElementsByClassName("nav-links")[0];
+    navLinks.classList.toggle("show");
+}
 
-    // Get a Free Quote Button
-    const quoteButton = document.getElementById('quoteButton');
-    quoteButton.addEventListener('click', function() {
-        alert('Please contact us at +1 (480) 343-7488 for a free quote.');
-    });
+function getQuote() {
+    alert("Please contact us at +1 (480) 343-7488 or email alohacleanigco.ky@gmail.com for a free quote.");
+}
 
-    // Apply for Job Button
-    const applyButton = document.querySelector('#careers .job button');
-    const applicationForm = document.getElementById('application-form');
+function applyForJob() {
+    document.getElementById("application-form").style.display = "block";
+}
 
-    applyButton.addEventListener('click', function() {
-        applicationForm.style.display = 'block';
-    });
-
-    // Submit Job Application Form
-    applicationForm.addEventListener('submit', function(event) {
+document.querySelectorAll('form').forEach(form => {
+    form.addEventListener('submit', event => {
         event.preventDefault();
-        alert('Your application has been submitted. Thank you!');
-        applicationForm.style.display = 'none';
-        applicationForm.reset();
+        alert("Thank you for your message/application. We will get back to you shortly.");
+        form.reset();
     });
 });
