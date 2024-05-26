@@ -54,6 +54,7 @@ header nav ul li a {
     color: #fff;
     text-align: center;
     padding: 100px 20px;
+    align:center;
 }
 
 .banner h1 {
@@ -274,3 +275,4 @@ footer .social-media a {
         flex: 1 1 100%;
     }
 }
+
