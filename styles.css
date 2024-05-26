@@ -50,202 +50,120 @@ header nav ul li a {
 
 /* Banner Section */
 .banner {
-    background: url('cleaning-banner1.jpg') no-repeat center center/cover;
+    position: relative;
     color: #fff;
     text-align: center;
     padding: 100px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+}
+
+.slideshow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.slides {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+    opacity: 0.8; /* Opacity for the banner images */
+}
+
+.slides.active {
+    display: block;
 }
 
 .banner h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
+    font-size: 36px;
+    margin: 0;
+    width: 90%;
+    z-index: 1;
 }
 
-#quoteButton {
-    background: #fff;
-    color: #f8b400;
+.banner button {
+    background-color: #2a9d8f;
     border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-#quoteButton:hover {
-    background: #f8b400;
     color: #fff;
-}
-
-/* About Section */
-#about {
-    padding: 50px 20px;
-    background: #f4f4f4;
-    text-align: center;
-}
-
-#about .team {
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
     margin-top: 20px;
+    z-index: 1;
 }
 
-#about .team img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 20px;
-}
+/* Main Content Styles */
 
-/* Services Section */
-#services {
-    padding: 50px 20px;
-}
-
-#services .service-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-#services .service {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 20px;
-    margin: 10px;
-    flex: 1 1 calc(33% - 40px);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-#services .service h3 {
-    color: #f8b400;
-    margin-bottom: 15px;
-}
-
-/* Testimonials Section */
-#testimonials {
-    padding: 50px 20px;
-    background: #f4f4f4;
-    text-align: center;
-}
-
-#testimonials .testimonial {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 20px;
-    margin: 10px auto;
-    max-width: 600px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-/* Careers Section */
-#careers {
-    padding: 50px 20px;
-}
-
-#careers .job-listings {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-#careers .job {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 20px;
-    margin: 10px;
-    flex: 1 1 calc(33% - 40px);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-#careers .job button {
-    background: #f8b400;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-#careers .job button:hover {
-    background: #333;
-}
-
-/* Contact Section */
+#about,
+#services,
+#testimonials,
+#careers,
 #contact {
-    padding: 50px 20px;
-    text-align: center;
+    padding: 40px 20px;
 }
 
-#contact form {
-    max-width: 600px;
-    margin: 0 auto;
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+.service-list,
+.testimonials,
+.job-listings {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.service,
+.testimonial,
+.job {
+    flex: 1 1 300px;
+    margin: 10px;
     padding: 20px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-#contact form label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-#contact form input, 
-#contact form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
     border: 1px solid #ddd;
-    border-radius: 5px;
 }
 
-#contact form button {
-    background: #f8b400;
+/* Footer Styles */
+
+.footer-content {
+    background-color: #264653;
     color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-#contact form button:hover {
-    background: #333;
-}
-
-/* Footer */
-footer {
-    background: #333;
-    color: #fff;
-    padding: 20px 0;
+    padding: 20px;
     text-align: center;
 }
 
-footer ul {
+.footer-content ul {
     list-style: none;
     padding: 0;
 }
 
-footer ul li {
-    display: inline-block;
+.footer-content ul li {
+    display: inline;
     margin: 0 10px;
 }
 
-footer ul li a {
+.footer-content ul li a {
     color: #fff;
     text-decoration: none;
 }
 
-footer .social-media a {
-    display: inline-block;
+.footer-content .social-media a {
+    color: #fff;
     margin: 0 10px;
-    color: #f8b400;
     text-decoration: none;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    header nav ul {
+/* Media Queries */
+
+@media screen and (max-width: 768px) {
+    header {
         display: none;
+        flex-direction: column;
+        align-items: center;
     }
 
     #toggleButton {
@@ -273,5 +191,13 @@ footer .social-media a {
     .service, .job {
         flex: 1 1 100%;
     }
-}
 
+    .banner h1 {
+        font-size: 28px;
+    }
+
+    .banner button {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+}
