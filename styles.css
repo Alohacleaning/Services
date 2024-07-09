@@ -252,10 +252,10 @@ footer .social-media a {
 
     #toggleButton {
         display: block;
-        background: #f8b400;
+        background: rgba(0,0,0,0.5);
         color: #fff;
         border: none;
-        padding: 10px;
+        padding: 0px;
         font-size: 24px;
         cursor: pointer;
         position: absolute;
