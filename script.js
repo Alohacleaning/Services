@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Get a Free Quote Button
     const quoteButton = document.getElementById('quoteButton');
     quoteButton.addEventListener('click', function() {
-        alert('Please contact us at +1 (480) 343-7488 for a free quote.');
+        alert('Please contact us at +1 (502)442-2320 for a free quote.');
     });
 
     // Apply for Job Button
