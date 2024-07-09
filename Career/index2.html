@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application - Aloha Cleaning Co.</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Aloha Cleaning Co. Job Application</h1>
+    </header>
+    <main>
+        <form action="submit_application.php" method="POST">
+            <section>
+                <h2>Personal Information</h2>
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="fullname" name="fullname" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </section>
+
+            <section>
+                <h2>Experience and Availability</h2>
+                <label for="experience">Previous Cleaning Experience (if any):</label>
+                <textarea id="experience" name="experience"></textarea>
+
+                <label for="availability">Availability (days and times):</label>
+                <textarea id="availability" name="availability"></textarea>
+            </section>
+
+            <section>
+                <h2>Additional Information</h2>
+                <label for="resume">Upload Resume:</label>
+                <input type="file" id="resume" name="resume">
+
+                <label for="coverletter">Cover Letter:</label>
+                <textarea id="coverletter" name="coverletter"></textarea>
+            </section>
+
+            <!-- Ensure the button is inside the form -->
+            <button type="submit">Submit Application</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 Aloha Cleaning Co. All rights reserved.</p>
+    </footer>
+</body>
+</html>
