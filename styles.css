@@ -281,8 +281,9 @@ footer .social-media a {
     .logo {
         text-align: center;
         position: relative;
-        width: 80%;
+        width: 60%;
     }
     .BD {
         width: 60%;
+        position: relative;
     }
