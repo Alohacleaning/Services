@@ -278,3 +278,11 @@ footer .social-media a {
 }
 .Aloha{
     color:black;}
+    .logo {
+        text-align: center;
+        position: relative;
+        width: 80%;
+    }
+    .BD {
+        width: 60%;
+    }
